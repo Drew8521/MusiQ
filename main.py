@@ -12,10 +12,15 @@ jinja_env = jinja2.Environment(
 class MainPage(webapp2.RequestHandler):
     def get(self):
         template=jinja_env.get_template('/templates/title.html')
-         #for a GET request
-        self.response.write(template.render()) #the response
+        self.response.write(template.render())
+
+class Profile(webapp2.RequestHandler):
+    def get(self):
+        template=jinja_env.get_template('/templates/profile.html')
+        self.response.write(template.render())
 
 #the app configuration section
 app = webapp2.WSGIApplication([
-    ('/', MainPage), #this maps the root url to the MainPage Handler
+    ('/', MainPage),
+    ('/profile', Profile)#this maps the root url to the MainPage Handler
 ], debug=True)
