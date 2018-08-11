@@ -24,9 +24,15 @@ class GenreChooser(webapp2.RequestHandler):
         template=jinja_env.get_template('/templates/genre_chooser.html')
         self.response.write(template.render())
 
+class DifficultyChooser(webapp2.RequestHandler):
+    def get(self):
+        template=jinja_env.get_template('/templates/difficulty_chooser.html')
+        self.response.write(template.render())
+
 #the app configuration section
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/profile', Profile),
-    ('/genre-chooser', GenreChooser)#this maps the root url to the MainPage Handler
+    ('/genre-chooser', GenreChooser),
+    ('/difficulty-chooser', DifficultyChooser)#this maps the root url to the MainPage Handler
 ], debug=True)
