@@ -9,10 +9,14 @@ jinja_env = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 #the handler section
-class MainPage(webapp2.RequestHandler):
+class LoginHandler(webapp2.RequestHandler):
     def get(self):
-        template=jinja_env.get_template('/templates/title.html')
-        self.response.write(template.render())
+        new_user_template = jinja_current_directory.get_template("templates/new_user.html")
+        prev_user_template = jinja_current_directory.get_template("templates/prev_user.html")
+        google_login_template = jinja_current_directory.get_template("templates/google_login.html")
+
+        # get Google user
+        user = users.get_current_user()
 
 class Profile(webapp2.RequestHandler):
     def get(self):
@@ -31,7 +35,7 @@ class DifficultyChooser(webapp2.RequestHandler):
 
 #the app configuration section
 app = webapp2.WSGIApplication([
-    ('/', MainPage),
+    ('/', LoginHandler),
     ('/profile', Profile),
     ('/genre-chooser', GenreChooser),
     ('/difficulty-chooser', DifficultyChooser)#this maps the root url to the MainPage Handler
