@@ -5,4 +5,4 @@ class User(ndb.Model):
     email = ndb.StringProperty(required=True)
     user_nickname =  ndb.StringProperty(required=True)
     highscore =  ndb.IntegerProperty(default = 0)
-    friends = ndb.KeyPropery(User, repeated=True, required=False)
+    friends = ndb.KeyProperty(kind='User', repeated=True, required=False)
