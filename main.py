@@ -3,6 +3,8 @@
 import webapp2
 import jinja2
 import os
+from google.appengine.api import users
+from google.appengine.ext import ndb
 from musiq_models import User
 
 jinja_env = jinja2.Environment(
@@ -12,6 +14,8 @@ jinja_env = jinja2.Environment(
 #the handler section
 class LoginHandler(webapp2.RequestHandler):
     def get(self):
+        logout_url = users.create_logout_url('/')
+        login_url = users.create_login_url('/')
         new_user_template = jinja_current_directory.get_template("templates/new_user.html")
         prev_user_template = jinja_current_directory.get_template("templates/prev_user.html")
         google_login_template = jinja_current_directory.get_template("templates/google_login.html")
