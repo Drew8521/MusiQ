@@ -3,14 +3,12 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /templates
-  script: templates
 - url: /styles
-  script: styles
+  static_dir: styles
 - url: /scripts
-  script: scripts
+  static_dir: scripts
 - url: /media
-  script: media
+  static_dir: media
 - url: /.*
   script: main.app
 
