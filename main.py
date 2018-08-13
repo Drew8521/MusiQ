@@ -3,6 +3,7 @@
 import webapp2
 import jinja2
 import os
+from musiq_models import User
 
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -17,6 +18,25 @@ class LoginHandler(webapp2.RequestHandler):
 
         # get Google user
         user = users.get_current_user()
+
+        if user:
+            # look for user in datastore
+            existing_user = User.query().filter(User.email == user.email()).get()
+            nickname = user.nickname()
+            if not existing_user:
+                # prompt new users to sign up
+                fields = {
+                  "nickname": nickname,
+                  "logout_url": logout_url,
+                }
+                self.response.write(new_user_template.render(fields))
+            else:
+                # direct existing user to feed
+                self.redirect('/feed')
+        else:
+            # Ask user to sign in to Google
+            self.response.write(google_login_template.render({ "login_url": login_url }))
+
 
 class Profile(webapp2.RequestHandler):
     def get(self):
