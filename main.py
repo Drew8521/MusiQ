@@ -81,8 +81,9 @@ class DifficultyChooser(webapp2.RequestHandler):
 
 class GameHandler(webapp2.RequestHandler):
     def get(self):
+        genre = self.request.get("genre")
         template=jinja_env.get_template('/templates/game.html')
-        self.response.write(template.render())
+        self.response.write(template.render({"genre": genre}))
 
 class EndgameHandler(webapp2.RequestHandler):
     def get(self):

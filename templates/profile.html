@@ -19,8 +19,9 @@
      {% endfor %}
    </table>
    <p>Welcome back {{ user_name }}.  Are you ready to test your musical intellect?</p>
-
-   <button>Play</button>
+<form method="get" action="/genre-chooser">
+   <button type="Submit">Play</button>
+</form>
 
      <a class="user_info_content" href="{{sign_out}}">Sign out</a>
  </body>
