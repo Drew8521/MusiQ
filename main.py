@@ -68,6 +68,7 @@ class Profile(webapp2.RequestHandler):
         self.redirect('/profile')
         return
 
+
 class GenreChooser(webapp2.RequestHandler):
     def get(self):
         template=jinja_env.get_template('/templates/genre_chooser.html')
@@ -95,5 +96,5 @@ app = webapp2.WSGIApplication([
     ('/genre-chooser', GenreChooser),
     ('/difficulty-chooser', DifficultyChooser),#this maps the root url to the MainPage Handler
     ('/game', GameHandler),
-    ('/end_game', EndgameHandler)
+    ('/end-game', EndgameHandler)
 ], debug=True)
