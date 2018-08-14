@@ -78,47 +78,9 @@ class DifficultyChooser(webapp2.RequestHandler):
         template=jinja_env.get_template('/templates/difficulty_chooser.html')
         self.response.write(template.render())
 
-class SeedHandler(webapp2.RequestHandler):
-    def get(self):
-        new_user_entry = User(
-        user_name = "Arthur",
-        user_nickname = "Giggle",
-        email = "asdf@asdf.com",
-        highscore = 12
-        )
-        new_user_entry.put()
-        new_user_entry = User(
-        user_name = "Dalman",
-        user_nickname = "DaMan",
-        email = "asd@asdf.com",
-        highscore = 19
-        )
-        new_user_entry.put()
-        new_user_entry = User(
-        user_name = "Sal",
-        user_nickname = "NotSal",
-        email = "IActuallyAmSal@asdf.com",
-        highscore = 42
-        )
-        new_user_entry.put()
-        new_user_entry = User(
-        user_name = "SerialKiller",
-        user_nickname = "DefNotAKiller",
-        email = "Puppies@asdf.com",
-        highscore = 39
-        )
-        new_user_entry.put()
-        new_user_entry = User(
-        user_name = "JohnCena",
-        user_nickname = "CenaYouCenaMe",
-        email = "YouCantSeeMe@asdf.com",
-        highscore = 104
-        )
-        new_user_entry.put()
 #the app configuration section
 app = webapp2.WSGIApplication([
     ('/', LoginHandler),
-    ('/seed', SeedHandler),
     ('/profile', Profile),
     ('/genre-chooser', GenreChooser),
     ('/difficulty-chooser', DifficultyChooser)#this maps the root url to the MainPage Handler
