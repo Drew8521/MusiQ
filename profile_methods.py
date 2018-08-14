@@ -20,6 +20,8 @@ def create_profile(current_user):
         "sign_out": logout_url,
         "username": current_user.user_nickname,
         "user_name": current_user.user_name,
+        "QCoins": current_user.QCoins,
+        "email": current_user.email,
         "highscores": ordered_highscores()
     }
     return profile_fields

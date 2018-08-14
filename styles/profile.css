@@ -1,4 +1,7 @@
 body {
-  display: grid;
-  grid
+
+}
+
+table td{
+  border: 1px solid red;
 }

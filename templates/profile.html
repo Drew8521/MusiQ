@@ -3,21 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>profile</title>
-    <!-- <link rel="stylesheet" href="/styles/profile.css"> -->
+    <link rel="stylesheet" href="/styles/profile.css">
   </head>
   <body>
-    <h1>{{ username }}</h1>
-   <img href = "#" alt="image profile picture">
+    <h1>MusiQ</h1>
+    <h3>{{ username }}</h3>
+    <h3><img src="media/musiq.png" alt="" height ="40"> {{QCoins}} </h3>
    <p>HIGHSCORE</p>
-   <ol>
+   <table style="width:20%">
      {% for user in highscores %}
-      <li>{{user[0]}} {{user[1]}}</li>
+     <tr>
+      <td>{{user[0]}}</td>
+      <td>{{user[1]}}</td>
+     <tr>
      {% endfor %}
-   </ol>
-   <p>^ Do not forget to include player in list ^</p>
-   <p>Tentative Additional Features</p>
-   <p>Time spent playing</p>
-   <p>Amount of coins</p>
+   </table>
+   <p>Welcome back {{ user_name }}.  Are you ready to test your musical intellect?</p>
+
    <button>Play</button>
 
      <a class="user_info_content" href="{{sign_out}}">Sign out</a>
