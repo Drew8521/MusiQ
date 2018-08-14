@@ -18,7 +18,6 @@ class LoginHandler(webapp2.RequestHandler):
         logout_url = users.create_logout_url('/')
         login_url = users.create_login_url('/')
         new_user_template = jinja_env.get_template("templates/new_user.html")
-        prev_user_template = jinja_env.get_template("templates/prev_user.html")
         google_login_template = jinja_env.get_template("templates/google_login.html")
         # get Google user
         user = users.get_current_user()
@@ -37,6 +36,7 @@ class LoginHandler(webapp2.RequestHandler):
             else:
                 # direct existing user to feed
                 self.redirect('/profile')
+                return
         else:
             # Ask user to sign in to Google
             self.response.write(google_login_template.render({ "login_url": login_url }))
@@ -51,6 +51,7 @@ class Profile(webapp2.RequestHandler):
         user = users.get_current_user()
         if not user:
             self.redirect('/')
+            return
         current_user = User.query().filter(User.email == user.email()).get()
         if not current_user:
             # upon new user form submission, create new user and store in datastore
@@ -63,6 +64,7 @@ class Profile(webapp2.RequestHandler):
             current_user = new_user_entry
         time.sleep(.2)
         self.redirect('/profile')
+        return
 
 class GenreChooser(webapp2.RequestHandler):
     def get(self):
