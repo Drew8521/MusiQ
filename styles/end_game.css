@@ -1,0 +1,40 @@
+body {
+  display: grid;
+  grid-template-columns: auto 100px auto;
+  grid-template-rows: row: 100px auto;
+
+}
+#background_image {
+  background-image: url("/media/end_game.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1 {
+  color: white;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  background-color: blue;
+  text-align: center;
+}
+
+h5 {
+  color: white;
+  grid-column: 3;
+  grid-row: 1;
+  border-style: groove;
+}
+
+h3 {
+  color: white;
+}
+
+h4 {
+  color: white;
+  grid-column: 3 / span 3;
+  grid-row: 2;
+  background-color: pink;
+}

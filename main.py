@@ -18,7 +18,6 @@ class LoginHandler(webapp2.RequestHandler):
         logout_url = users.create_logout_url('/')
         login_url = users.create_login_url('/')
         new_user_template = jinja_env.get_template("templates/new_user.html")
-        prev_user_template = jinja_env.get_template("templates/prev_user.html")
         google_login_template = jinja_env.get_template("templates/google_login.html")
         # get Google user
         user = users.get_current_user()
@@ -74,10 +73,22 @@ class DifficultyChooser(webapp2.RequestHandler):
         template=jinja_env.get_template('/templates/difficulty_chooser.html')
         self.response.write(template.render())
 
+class GameHandler(webapp2.RequestHandler):
+    def get(self):
+        template=jinja_env.get_template('/templates/game.html')
+        self.response.write(template.render())
+
+class EndgameHandler(webapp2.RequestHandler):
+    def get(self):
+        template=jinja_env.get_template('/templates/end_game.html')
+        self.response.write(template.render())
+
 #the app configuration section
 app = webapp2.WSGIApplication([
     ('/', LoginHandler),
     ('/profile', Profile),
     ('/genre-chooser', GenreChooser),
-    ('/difficulty-chooser', DifficultyChooser)#this maps the root url to the MainPage Handler
+    ('/difficulty-chooser', DifficultyChooser),#this maps the root url to the MainPage Handler
+    ('/game', GameHandler),
+    ('/end_game', EndgameHandler)
 ], debug=True)
