@@ -6,13 +6,13 @@
     <!-- <link rel="stylesheet" href="/styles/profile.css"> -->
   </head>
   <body>
-    <h1>NAME FOR PROFILE</h1>
+    <h1>{{ username }}</h1>
    <img href = "#" alt="image profile picture">
    <p>HIGHSCORE</p>
    <ol>
-     <li>Ranking</li>
-     <li>Of<li>
-     <li>Friends</li>
+     {% for user in highscores %}
+      <li>{{user[0]}} {{user[1]}}</li>
+     {% endfor %}
    </ol>
    <p>^ Do not forget to include player in list ^</p>
    <p>Tentative Additional Features</p>
