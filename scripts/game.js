@@ -21,3 +21,11 @@ let startTime = Date.now();
   }
 
 console.log(startTime);
+
+const menu = document.querySelector('h4')
+
+menu.addEventListener('click', exit)
+
+function exit(event) {
+  location.href='/profile'
+}
