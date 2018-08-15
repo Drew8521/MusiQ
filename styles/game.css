@@ -6,13 +6,16 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-size: 40px;
-
+  margin: 0;
+  padding: 0;
   color: white;
   font-family: Cairo, sans-serif;
   padding-top: 10px;
   display: grid;
   grid-template-columns: column: auto, 100px;
   grid-template-rows: row: auto;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 h2 {
