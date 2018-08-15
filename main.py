@@ -8,7 +8,8 @@ from google.appengine.api import users
 from google.appengine.ext import ndb
 from musiq_models import User
 from profile_methods import create_profile, logout_url, login_url
-import dbload.py
+from models import Song
+from dbload import seed_data
 
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
