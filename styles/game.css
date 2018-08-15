@@ -14,11 +14,34 @@ body {
   grid-template-columns: column: auto, 100px;
   grid-template-rows: row: auto;
 }
+#wrapper
+{
+    margin-left: 17%;
+    margin-right: 10%;
+    width: 80%;
+    height:300px;
+}
 
 h2 {
   text-align: center;
 }
-
+#timer {
+  margin-left: 35%;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal normal bold 50px/normal "Atomic Age", Helvetica, sans-serif;
+  color: black;
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  text-shadow: 1px 5px 1px rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
+  -webkit-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+}
 #question-right {
     transition: opacity .25s ease-in-out;
     opacity = 0;
@@ -71,11 +94,16 @@ h1 {
   transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
-.button {
+#button {
   text-align: center;
 }
-.button:hover {
+#button:hover {
   text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #00ffff , 0 0 70px #00ffff , 0 0 80px #00ffff , 0 0 100px #00ffff ;
+}
+
+#answer {
+  width: 80%;
+  display: inline-block;
 }
 
 p {

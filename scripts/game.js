@@ -1,8 +1,13 @@
-let countdownEnding = Date.now()+15000;
+let countdownEnding = Date.now()+240000;
 let startTime = Date.now();
 
-  let countdown = setInterval(countDown, 1000);
+  const menu = document.getElementById('button');
+  menu.addEventListener('click', exit);
+  function exit(event) {
+    location.href='/profile';
+  }
 
+  let countdown = setInterval(countDown, 1000);
   function countDown()
   {
     let timeLeft = countdownEnding - Date.now();
@@ -22,14 +27,6 @@ let startTime = Date.now();
     }
   }
 
-console.log(startTime);
-const menu = document.querySelector('h4');
-
-menu.addEventListener('click', exit);
-
-function exit(event) {
-  location.href='/profile';
-}
 
 const userAnswer = document.getElementById('answer');
 
