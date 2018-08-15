@@ -7,13 +7,17 @@ body {
   background-attachment: fixed;
   color: white;
   text-align: center;
-  color: black;
+  color: white;
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
-  font-size: 40px;
-  text-shadow: 2px 4px white;
-  padding-top: 10px;
+  font-family: 'Play', sans-serif;
+  font-size: 60px;
+  font-weight: bolder;
+  text-shadow: 9px 4px black;
+}
+
+#easy, #medium, #hard {
+    padding-top: 120px;
 }
 
 #easy:hover {
