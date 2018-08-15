@@ -8,6 +8,7 @@ from google.appengine.api import users
 from google.appengine.ext import ndb
 from musiq_models import User
 from profile_methods import create_profile, logout_url, login_url
+from dbload.py import seed_data
 
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -42,6 +43,7 @@ class LoginHandler(webapp2.RequestHandler):
 
 
 class Profile(webapp2.RequestHandler):
+    seed_data()
     def get(self):
         template=jinja_env.get_template('/templates/profile.html')
         user = users.get_current_user()
