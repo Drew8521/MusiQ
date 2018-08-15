@@ -20,7 +20,7 @@ h1 {
   grid-column: 1, span/2;
   text-align: center;
 }
-.neon-text {
+#neon-text {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;

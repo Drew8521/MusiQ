@@ -1,4 +1,4 @@
-let countdownEnding = Date.now()+5000;
+let countdownEnding = Date.now()+15000;
 let startTime = Date.now();
 
   let countdown = setInterval(countDown, 1000);
@@ -23,11 +23,18 @@ let startTime = Date.now();
   }
 
 console.log(startTime);
+const menu = document.querySelector('h4');
 
-const menu = document.querySelector('h4')
-
-menu.addEventListener('click', exit)
+menu.addEventListener('click', exit);
 
 function exit(event) {
-  location.href='/profile' 
+  location.href='/profile';
+}
+
+const userAnswer = document.getElementById('answer');
+
+function check() {
+  if (userAnswer.value == "word") {
+    document.getElementById('neon-text').innerHTML = "Wow You Have Done It!";
+  }
 }
