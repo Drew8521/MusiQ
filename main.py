@@ -17,6 +17,7 @@ jinja_env = jinja2.Environment(
     autoescape=True)
 #the handler section
 class LoginHandler(webapp2.RequestHandler):
+    #seed_data()
     def get(self):
         new_user_template = jinja_env.get_template("templates/new_user.html")
         google_login_template = jinja_env.get_template("templates/google_login.html")
@@ -44,7 +45,6 @@ class LoginHandler(webapp2.RequestHandler):
 
 
 class Profile(webapp2.RequestHandler):
-    seed_data()
     def get(self):
         template=jinja_env.get_template('/templates/profile.html')
         user = users.get_current_user()
