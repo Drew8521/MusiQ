@@ -1,10 +1,10 @@
 let countdownEnding = Date.now()+240000;
 let startTime = Date.now();
 
-  const menu = document.getElementById('button');
-  menu.addEventListener('click', exit);
-  function exit(event) {
-    location.href='/profile';
+const menu = document.getElementById('button');
+menu.addEventListener('click', exit);
+function exit(event) {
+  location.href='/profile';
   }
 
   let countdown = setInterval(countDown, 1000);

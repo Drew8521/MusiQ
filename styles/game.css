@@ -11,9 +11,7 @@ body {
   color: white;
   font-family: Cairo, sans-serif;
   padding-top: 10px;
-  display: grid;
-  grid-template-columns: column: auto, 100px;
-  grid-template-rows: row: auto;
+
   white-space: nowrap;
   overflow: hidden;
 }
@@ -28,6 +26,11 @@ body {
 h2 {
   text-align: center;
 }
+
+h5 {
+  text-align: center;
+}
+
 #timer {
   margin-left: 35%;
   -webkit-box-sizing: content-box;
@@ -81,7 +84,7 @@ h2 {
 
 h1 {
   text-shadow: 2px 4px white;
-  grid-column: 1, span/2;
+  
   text-align: center;
 }
 #neon-text {
