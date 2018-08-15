@@ -99,13 +99,23 @@ class SeedHandler(webapp2.RequestHandler):
     def get(self):
         seed_data()
         self.response.write('Data Loaded')
-#the app configuration section
+
+class UpdateScoreHandler(webapp2.RequestHandler):
+    def get(self):
+        new_score = int(self.request.get("new"))
+        user = users.get_current_user()
+        current_user = User.query().filter(User.email == user.email()).get()
+        if new_score > current_user.highscore:
+            current_user.highscore = new_score
+            current_user.put()
+
 app = webapp2.WSGIApplication([
     ('/', LoginHandler),
     ('/profile', Profile),
     ('/genre-chooser', GenreChooser),
-    ('/difficulty-chooser', DifficultyChooser),#this maps the root url to the MainPage Handler
+    ('/difficulty-chooser', DifficultyChooser),
     ('/game', GameHandler),
     ('/end-game', EndgameHandler),
     ('/seed', SeedHandler),
+    ('/update-score', UpdateScoreHandler),
 ], debug=True)
