@@ -20,6 +20,13 @@ body {
     margin-right: 10%;
     width: 80%;
     height:300px;
+    padding: 0;
+}
+
+#genre {
+    color: white;
+    font-family: 'Play', sans-serif;
+    text-shadow: 9px 4px black;
 }
 
 h2 {
@@ -72,10 +79,6 @@ h2 {
     to   { opacity: 0; }
 }
 
-#comment {
-  font-size: 15px;
-}
-
 h1 {
   text-shadow: 2px 4px white;
   grid-column: 1, span/2;
@@ -100,6 +103,9 @@ h1 {
 
 #button {
   text-align: center;
+  font-family: 'Play', sans-serif;
+  color: white;
+  text-shadow: 4px 4px black;
 }
 #button:hover {
   text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #00ffff , 0 0 70px #00ffff , 0 0 80px #00ffff , 0 0 100px #00ffff ;
