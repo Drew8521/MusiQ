@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% for item in playlist %}
+    <p>{{ item.track.href }} by {{ item.track.artists[0].name }}
+    <hr>
+    {% endfor %}
+  </body>
+</html>

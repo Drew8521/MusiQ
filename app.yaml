@@ -19,3 +19,10 @@ libraries:
   version: latest
 - name: jinja2
   version: latest
+- name: ssl
+  version: latest
+
+env_variables:
+  SPOTIPY_CLIENT_ID: 'a557faea8f66459eb23e1ae3d46dcd0a'
+  SPOTIPY_CLIENT_SECRET: '07598c693dc740eba6821d22923f0f60'
+  SPOTIPY_REDIRECT_URI: 'http://localhost:8080/'
