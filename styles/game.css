@@ -15,6 +15,10 @@ body {
   grid-template-rows: row: auto;
 }
 
+h2 {
+  text-align: center;
+}
+
 h1 {
   text-shadow: 2px 4px white;
   grid-column: 1, span/2;
@@ -46,5 +50,5 @@ h1 {
 
 p {
   text-align: right;
-  padding-right: 50px;
+  padding-right: 500px;
 }

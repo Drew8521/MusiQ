@@ -8,6 +8,8 @@ from google.appengine.api import users
 from google.appengine.ext import ndb
 from musiq_models import User
 from profile_methods import create_profile, ordered_highscores, logout_url, login_url
+from dbload import seed_data
+from models import Song
 
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -93,6 +95,10 @@ class EndgameHandler(webapp2.RequestHandler):
         profile_fields = create_profile(current_user)
         self.response.write(template.render(profile_fields))
 
+class SeedHandler(webapp2.RequestHandler):
+    def get(self):
+        seed_data()
+        self.response.write('Data Loaded')
 #the app configuration section
 app = webapp2.WSGIApplication([
     ('/', LoginHandler),
@@ -100,5 +106,6 @@ app = webapp2.WSGIApplication([
     ('/genre-chooser', GenreChooser),
     ('/difficulty-chooser', DifficultyChooser),#this maps the root url to the MainPage Handler
     ('/game', GameHandler),
-    ('/end-game', EndgameHandler)
+    ('/end-game', EndgameHandler),
+    ('/seed', SeedHandler),
 ], debug=True)
