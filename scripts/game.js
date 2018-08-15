@@ -16,7 +16,7 @@ let startTime = Date.now();
     if (timeLeft<0)
     {
       clearInterval(countDown);
-      document.getElementById("timer").innerHTML = "GAME OVER BITCH";
+      document.getElementById("timer").innerHTML = "GAME OVER";
       window.location.replace("/end-game");
 
     }
@@ -33,8 +33,15 @@ function exit(event) {
 
 const userAnswer = document.getElementById('answer');
 
-function check() {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function check() {
   if (userAnswer.value == "word") {
-    document.getElementById('neon-text').innerHTML = "Wow You Have Done It!";
+    document.getElementById('question-right').innerHTML = "Wow You Have Done It!";
+    document.getElementById("question-right").style.opacity = "1";
+    userAnswer.value = "";
+    await sleep(1000);
+    document.getElementById("question-right").style.opacity = "0";
   }
 }
