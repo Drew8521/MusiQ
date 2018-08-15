@@ -7,7 +7,7 @@ import time
 from google.appengine.api import users
 from google.appengine.ext import ndb
 from musiq_models import User
-from profile_methods import create_profile, logout_url, login_url
+from profile_methods import create_profile, ordered_highscores, logout_url, login_url
 
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -88,7 +88,10 @@ class GameHandler(webapp2.RequestHandler):
 class EndgameHandler(webapp2.RequestHandler):
     def get(self):
         template=jinja_env.get_template('/templates/end_game.html')
-        self.response.write(template.render())
+        user = users.get_current_user()
+        current_user = User.query().filter(User.email == user.email()).get()
+        profile_fields = create_profile(current_user)
+        self.response.write(template.render(profile_fields))
 
 #the app configuration section
 app = webapp2.WSGIApplication([

@@ -15,7 +15,14 @@
     <h1 id='good'>Good Game!</h1>
     <!-- <h3>Results</h3> -->
     <h4 id='leader'>Leader Board</h4>
-    <h4 id='table'>TABLE</h4>
+    <table id='table' style="width:20%">
+      {% for user in highscores %}
+      <tr>
+       <td>{{user[0]}}</td>
+       <td>{{user[1]}}</td>
+      <tr>
+      {% endfor %}
+    </table>
     <form id='play' method="get" action="/genre-chooser">
        <button type="Submit">Play Again!</button>
     </form>
