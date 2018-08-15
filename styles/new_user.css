@@ -12,11 +12,11 @@ body {
 }
 
 h1 {
-  font-family: 'Fascinate Inline', cursive;
-  font-size: 30px;
+  font-family: 'Play', sans-serif;
+  font-size: 40px;
   text-align: center;
   color: white;
-  text-shadow: 5px 5px #003bff;
+  text-shadow: 4px 4px black;
   padding-top: 60px;
 }
 
