@@ -1,5 +1,5 @@
 
-from models.py import Song
+from models import Song
 
 def seed_data():
     Song(genre="Pop", song="Be Alright", artist="Dean Lewis", album="Be Alright", url="https://open.spotify.com/track/3EPXxR3ImUwfayaurPi3cm").put()
