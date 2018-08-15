@@ -17,7 +17,6 @@ jinja_env = jinja2.Environment(
     autoescape=True)
 #the handler section
 class LoginHandler(webapp2.RequestHandler):
-    #seed_data()
     def get(self):
         new_user_template = jinja_env.get_template("templates/new_user.html")
         google_login_template = jinja_env.get_template("templates/google_login.html")
@@ -96,6 +95,10 @@ class EndgameHandler(webapp2.RequestHandler):
         profile_fields = create_profile(current_user)
         self.response.write(template.render(profile_fields))
 
+class SeedHandler(webapp2.RequestHandler):
+    def get(self):
+        seed_data()
+        self.response.write('Data Loaded')
 #the app configuration section
 app = webapp2.WSGIApplication([
     ('/', LoginHandler),
@@ -103,5 +106,6 @@ app = webapp2.WSGIApplication([
     ('/genre-chooser', GenreChooser),
     ('/difficulty-chooser', DifficultyChooser),#this maps the root url to the MainPage Handler
     ('/game', GameHandler),
-    ('/end-game', EndgameHandler)
+    ('/end-game', EndgameHandler),
+    ('/seed', SeedHandler),
 ], debug=True)

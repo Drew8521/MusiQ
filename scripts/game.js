@@ -1,8 +1,13 @@
-let countdownEnding = Date.now()+5000;
+let countdownEnding = Date.now()+240000;
 let startTime = Date.now();
 
-  let countdown = setInterval(countDown, 1000);
+  const menu = document.getElementById('button');
+  menu.addEventListener('click', exit);
+  function exit(event) {
+    location.href='/profile';
+  }
 
+  let countdown = setInterval(countDown, 1000);
   function countDown()
   {
     let timeLeft = countdownEnding - Date.now();
@@ -16,18 +21,24 @@ let startTime = Date.now();
     if (timeLeft<0)
     {
       clearInterval(countDown);
-      document.getElementById("timer").innerHTML = "GAME OVER BITCH";
+      document.getElementById("timer").innerHTML = "GAME OVER";
       window.location.replace("/end-game");
 
     }
   }
 
-console.log(startTime);
 
-const menu = document.querySelector('h4')
+const userAnswer = document.getElementById('answer');
 
-menu.addEventListener('click', exit)
-
-function exit(event) {
-  location.href='/profile' 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function check() {
+  if (userAnswer.value == "word") {
+    document.getElementById('question-right').innerHTML = "Wow You Have Done It!";
+    document.getElementById("question-right").style.opacity = "1";
+    userAnswer.value = "";
+    await sleep(1000);
+    document.getElementById("question-right").style.opacity = "0";
+  }
 }
