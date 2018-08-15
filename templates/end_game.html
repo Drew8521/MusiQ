@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>End Game</title>
-  <link rel="stylesheet" href="/styles/end_game.css">
+    <link rel="stylesheet" href="/styles/end_game.css">
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href='media/musiq.png'>
+      <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet"/>
   </head>
   <body>
   <div id='background_image'>
@@ -12,7 +15,20 @@
     <h1 id='good'>Good Game!</h1>
     <!-- <h3>Results</h3> -->
     <h4 id='leader'>Leader Board</h4>
-    <h5 id='play'>Play Again!</h5>
+    <table id='table' style="width:20%">
+      {% for user in highscores %}
+      <tr>
+       <td>{{user[0]}}</td>
+       <td>{{user[1]}}</td>
+      <tr>
+      {% endfor %}
+    </table>
+    <form id='play' method="get" action="/genre-chooser">
+       <button type="Submit">Play Again!</button>
+    </form>
+    <form id='play' method="get" action="/profile">
+       <button type="Submit">Return to your Profile!</button>
+    </form>
   </div>
   </body>
 </html>

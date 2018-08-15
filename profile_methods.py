@@ -12,7 +12,7 @@ class high_score_holder():
         self.time = time
 
 def ordered_highscores():
-    highscore_users = User.query().order(-User.highscore).fetch(limit=15)
+    highscore_users = User.query().order(-User.highscore).fetch(limit=10)
     return [(user.user_nickname, user.highscore) for user in highscore_users]
 
 def create_profile(current_user):

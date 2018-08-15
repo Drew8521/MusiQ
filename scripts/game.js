@@ -1,4 +1,4 @@
-let countdownEnding = Date.now()+60000;
+let countdownEnding = Date.now()+5000;
 let startTime = Date.now();
 
   let countdown = setInterval(countDown, 1000);
@@ -29,5 +29,5 @@ const menu = document.querySelector('h4')
 menu.addEventListener('click', exit)
 
 function exit(event) {
-  location.href='/profile'
+  location.href='/profile' 
 }

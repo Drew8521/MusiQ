@@ -2,15 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>profile</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="/styles/profile.css">
-    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+<link rel="shortcut icon" type="image/png" href='media/musiq.png'>
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet"/>
   </head>
   <body>
     <h1 class='neon-text'>MusiQ</h1>
     <link async href="http://fonts.googleapis.com/css?family=Atomic%20Age" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
     <h3 id='username'>{{ username }}</h3>
-    <h3 id='pic'><img src="media/musiq.png" alt="" height ="40"> {{QCoins}} </h3>
+    <h3 id='pic'><img src="media/musiq.png" alt="" height ="100" width='100'> {{QCoins}} </h3>
    <p id='highscores'>HIGHSCORES</p>
    <table id='table' style="width:20%">
      {% for user in highscores %}
@@ -20,7 +22,7 @@
      <tr>
      {% endfor %}
    </table>
-   <p id='welcome'>Welcome back {{ user_name }}.  Are you ready to test your musical intellect?</p>
+   <p id='welcome'>Welcome back {{ user_name }}.<br>  Are you ready to test your musical intellect?</p>
 <form id='play' method="get" action="/genre-chooser">
    <button type="Submit">Play</button>
 </form>
