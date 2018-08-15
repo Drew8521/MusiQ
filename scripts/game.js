@@ -1,4 +1,4 @@
-let countdownEnding = Date.now()+60000;
+let countdownEnding = Date.now()+5000;
 let startTime = Date.now();
 
   let countdown = setInterval(countDown, 1000);
