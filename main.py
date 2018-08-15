@@ -8,6 +8,8 @@ from google.appengine.api import users
 from google.appengine.ext import ndb
 from musiq_models import User
 from profile_methods import create_profile, ordered_highscores, logout_url, login_url
+from dbload import seed_data
+from models import Song
 
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -15,6 +17,7 @@ jinja_env = jinja2.Environment(
     autoescape=True)
 #the handler section
 class LoginHandler(webapp2.RequestHandler):
+    #seed_data()
     def get(self):
         new_user_template = jinja_env.get_template("templates/new_user.html")
         google_login_template = jinja_env.get_template("templates/google_login.html")
