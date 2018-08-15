@@ -1,6 +1,6 @@
 body {
   display: grid;
-  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
   color: white;
@@ -16,8 +16,23 @@ body {
 
 }
 
+.progress, .progress-bar {
+  grid-column: 2;
+  grid-row: 2;
+  height: 10px;
+
+  width: 450px;
+  margin-bottom: 0;
+  border: 0;
+  padding: 0;
+  box-shadow: 2px;
+}
+
 table td{
-  border: 1px solid red;
+  border: 2px solid blue;
+  font-size: 20px;
+  text-shadow: 1px 1px black;
+  background: rgba(255, 255, 255, 0.6);
 }
 
 #username {
@@ -25,6 +40,12 @@ table td{
   grid-row: 2;
   font-size: 40px;
   background: rgba(255, 255, 255, 0.6);
+  color: white;
+  font-family: 'Play', sans-serif;
+  text-shadow: 4px 4px black;
+  margin-left: 20px;
+  border-style: double;
+
 
 }
  #pic {
@@ -38,14 +59,22 @@ table td{
    grid-row: 3;
    font-size: 30px;
    background: rgba(255, 255, 255, 0.6);
+   color: white;
+   font-family: 'Play', sans-serif;
+   text-shadow: 4px 4px black;
+   margin-left: 20px;
 
  }
 
  #table {
    grid-column: 1;
    grid-row: 4;
-   background: rgba(255, 255, 255, 0.6);
-   table-align: center;
+   color: white;
+   font-family: 'Play', sans-serif;
+   text-shadow: 4px 4px black;
+   margin-left: 20px;
+
+
  }
 
  #welcome {
@@ -56,17 +85,28 @@ table td{
    font-weight: bold;
    text-shadow: none;
    color: black;
+   font-family: 'Play', sans-serif;
+   text-shadow: 1px 1px white;
+   margin-bottom: 200px;
  }
 
  #play {
    grid-column: 2;
    grid-row: 5;
+   color: black;
+   font-family: 'Play', sans-serif;
+   text-shadow: 4px 4px white;
  }
- 
+
  #friends {
    grid-column: 3;
    grid-row: 3 / span 6;
    background: rgba(255, 255, 255, 0.6);
+   color: white;
+   font-family: 'Play', sans-serif;
+   text-shadow: 4px 4px black;
+   margin-right: 20px;
+   margin-bottom: 20px;
 }
 
  #sign_out {
@@ -77,12 +117,16 @@ table td{
    background: rgba(255, 255, 255, 0.6);
    border-style: inset;
    border-color: blue white;
+   font-family: 'Play', sans-serif;
    margin: -10px 140px -10px 140px;
    text-shadow: 2px 3px blue;
+   margin-bottom: 20px;
+
  }
 
  #sign_out:hover {
    color: black;
+
  }
 
 .neon-text {
