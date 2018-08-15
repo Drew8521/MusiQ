@@ -17,7 +17,7 @@ let startTime = Date.now();
     {
       clearInterval(countDown);
       document.getElementById("timer").innerHTML = "GAME OVER BITCH";
+      window.location.replace("/end-game");
+
     }
   }
-
-console.log(startTime);
