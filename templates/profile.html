@@ -4,13 +4,15 @@
     <meta charset="utf-8">
     <title>profile</title>
     <link rel="stylesheet" href="/styles/profile.css">
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
   </head>
   <body>
-    <h1>MusiQ</h1>
-    <h3>{{ username }}</h3>
-    <h3><img src="media/musiq.png" alt="" height ="40"> {{QCoins}} </h3>
-   <p>HIGHSCORE</p>
-   <table style="width:20%">
+    <h1 class='neon-text'>MusiQ</h1>
+    <link async href="http://fonts.googleapis.com/css?family=Atomic%20Age" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    <h3 id='username'>{{ username }}</h3>
+    <h3 id='pic'><img src="media/musiq.png" alt="" height ="40"> {{QCoins}} </h3>
+   <p id='highscores'>HIGHSCORES</p>
+   <table id='table' style="width:20%">
      {% for user in highscores %}
      <tr>
       <td>{{user[0]}}</td>
@@ -18,11 +20,11 @@
      <tr>
      {% endfor %}
    </table>
-   <p>Welcome back {{ user_name }}.  Are you ready to test your musical intellect?</p>
-<form method="get" action="/genre-chooser">
+   <p id='welcome'>Welcome back {{ user_name }}.  Are you ready to test your musical intellect?</p>
+<form id='play' method="get" action="/genre-chooser">
    <button type="Submit">Play</button>
 </form>
-
-     <a class="user_info_content" href="{{sign_out}}">Sign out</a>
+  <h1 id='friends'>Friends</h1>
+     <a id='sign_out' class="user_info_content" href="{{sign_out}}">Sign out</a>
  </body>
  </html>

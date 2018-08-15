@@ -6,18 +6,16 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: grid;
-  height: 100vh;
   grid-template-rows: 1fr 2fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
-  color: black;
+  color: white;
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Play', sans-serif;
   font-size: 30px;
-  text-shadow: 2px 4px white;
-
-
+  font-weight: bolder;
+  text-shadow: 9px 4px black;
 }
 
 
@@ -31,7 +29,6 @@ body {
  #choose {
    grid-column: 1 / span 3;
    grid-row: 2;
-   background-color: green;
  }
 
  #classic {
