@@ -21,8 +21,6 @@ let startTime = Date.now();
 
     }
   }
-<<<<<<< HEAD
-=======
 
 console.log(startTime);
 
@@ -33,4 +31,3 @@ menu.addEventListener('click', exit)
 function exit(event) {
   location.href='/profile'
 }
->>>>>>> 1c92e7c8cd4622657dcce92e83ff8ad31d15819f
