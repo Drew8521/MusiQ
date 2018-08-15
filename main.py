@@ -7,13 +7,9 @@ import time
 from google.appengine.api import users
 from google.appengine.ext import ndb
 from musiq_models import User
-<<<<<<< HEAD
-from profile_methods import create_profile, logout_url, login_url
-from models import Song
-from dbload import seed_data
-=======
 from profile_methods import create_profile, ordered_highscores, logout_url, login_url
->>>>>>> 44845e5a940f12b1b7525a1d051a17094c5fec30
+from dbload import seed_data
+from models import Song
 
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
