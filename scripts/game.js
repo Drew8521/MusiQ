@@ -3,8 +3,10 @@ let startTime = Date.now();
 let score = 0;
 let randomCompliment = Math.floor((Math.random() * 7))
 let responses = ["Music is your forte!", "A high note!", "Blast it!", "Killed it!", "Sick!", "MusIQ off the Charts!", "Impressive!", "Rock On!"];
+const genre = document.getElementById('genre').innerHTML
 
-const menu = document.getElementById('button');
+updateQuestion();
+const menu = document.getElementById('button-right');
 menu.addEventListener('click', exit);
 function exit(event) {
   location.href='/profile';
@@ -19,19 +21,15 @@ function exit(event) {
     let minutes = Math.floor(timeLeft % (1000*60*60) / (1000*60));
     let seconds = Math.floor((timeLeft+10) % (1000*60) / (1000));
     document.getElementById("timer").innerHTML = seconds;
-
-    if (timeLeft<0)
-    {
+    if (timeLeft<=0) {
       clearInterval(countDown);
       document.getElementById("timer").innerHTML = "GAME OVER";
       window.location.replace("/end-game");
-
     }
   }
 
 
 const userAnswer = document.getElementById('answer');
-const genre = document.getElementById('genre').innerHTML
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
