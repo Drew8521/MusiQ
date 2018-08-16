@@ -21,13 +21,10 @@ function exit(event) {
     let minutes = Math.floor(timeLeft % (1000*60*60) / (1000*60));
     let seconds = Math.floor((timeLeft+10) % (1000*60) / (1000));
     document.getElementById("timer").innerHTML = seconds;
-
-    if (timeLeft<0)
-    {
+    if (timeLeft<=0) {
       clearInterval(countDown);
       document.getElementById("timer").innerHTML = "GAME OVER";
       window.location.replace("/end-game");
-
     }
   }
 
