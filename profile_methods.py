@@ -1,3 +1,4 @@
+import math
 from google.appengine.api import users
 from google.appengine.ext import ndb
 from musiq_models import User
@@ -15,6 +16,16 @@ def ordered_highscores():
     highscore_users = User.query().order(-User.highscore).fetch(limit=10)
     return [(user.user_nickname, user.highscore) for user in highscore_users]
 
+def musIQ(score):
+    if (score != 0):
+        musIQ = int(math.log(score) * 65)
+        return musIQ
+    return 0
+
+def musIQPercentage(musIQ):
+    percent = ((musIQ / 200.0)*100)
+    return percent
+
 def create_profile(current_user):
     profile_fields = {
         "sign_out": logout_url,
@@ -22,6 +33,9 @@ def create_profile(current_user):
         "user_name": current_user.user_name,
         "QCoins": current_user.QCoins,
         "email": current_user.email,
-        "highscores": ordered_highscores()
+        "score": current_user.score,
+        "highscores": ordered_highscores(),
+        "musIQ": musIQ(current_user.highscore),
+        "musIQPercentage": musIQPercentage(musIQ(current_user.highscore))
     }
     return profile_fields

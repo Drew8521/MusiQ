@@ -20,13 +20,28 @@ body {
   grid-column: 2;
   grid-row: 2;
   height: 10px;
-
   width: 450px;
   margin-bottom: 0;
   border: 0;
   padding: 0;
   box-shadow: 2px;
 }
+
+#MusIQ {
+   color: white;
+   grid-column: 2;
+   grid-row: 2;
+   margin-top: 5%;
+  font-family: 'Play', sans-serif;
+ }
+
+ #MusIQ {
+   color: white;
+   grid-column: 2;
+   grid-row: 2;
+   margin-top: 5%;
+  font-family: 'Play', sans-serif;
+ }
 
 table td{
   border: 2px solid blue;
@@ -97,6 +112,7 @@ table td{
    font-family: 'Play', sans-serif;
    text-shadow: 4px 4px white;
  }
+
 
  #friends {
    grid-column: 3;
