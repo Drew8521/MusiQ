@@ -16,6 +16,7 @@ body {
   grid-template-rows: 2fr 1fr 1fr 3fr 1fr 1fr;
 }
 
+
 #good {
   grid-column: 1;
   grid-row: 2;
