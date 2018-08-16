@@ -8,10 +8,9 @@ body {
   font-size: 40px;
   margin: 0;
   padding: 0;
-  color: white;
-  font-family: Cairo, sans-serif;
+  color: white
+  font-family: 'Play', sans-serif;
   padding-top: 10px;
-
   white-space: nowrap;
   overflow: hidden;
 }
@@ -37,6 +36,13 @@ h2 {
 }
 
 h5 {
+  text-align: center;
+}
+
+#question {
+  color: red;
+  font-family: 'Play', sans-serif;
+  text-shadow: 2px 2px black;
   text-align: center;
 }
 
@@ -91,7 +97,6 @@ h5 {
 
 h1 {
   text-shadow: 2px 4px white;
-
   text-align: center;
 }
 #neon-text {
