@@ -34,7 +34,7 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 async function check() {
-  if (userAnswer.value === document.getElementById("artist").innerHTML) {
+  if (userAnswer.value.toLowerCase() === document.getElementById("artist").innerHTML) {
     document.getElementById('question-right').innerHTML = "Wow You Have Done It!";
     document.getElementById("question-right").style.opacity = "1";
     userAnswer.value = "";
@@ -44,6 +44,6 @@ async function check() {
     await sleep(1000);
     document.getElementById("question-right").style.opacity = "0";
     fetch(`/game`)
-    
+
   }
 }

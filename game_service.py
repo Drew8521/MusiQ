@@ -8,7 +8,7 @@ def random_song(genre):
     random_song = {
         "title": songs.song,
         "album": songs.album,
-        "artist": songs.artist,
+        "artist": songs.artist.lower(),
         "genre": genre,
     }
     return random_song
