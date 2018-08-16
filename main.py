@@ -2,6 +2,7 @@
 #the import section
 import webapp2
 import jinja2
+import json
 import os
 import time
 from google.appengine.api import users
@@ -93,7 +94,9 @@ class GameHandler(webapp2.RequestHandler):
 class RandomQuestionHandler(webapp2.RequestHandler):
     def get(self):
         genre = self.request.get("genre")
+        self.response.headers['Content-Type'] = 'application/json'
         random_function = random_song(genre)
+        self.response.out.write(json.dumps(random_function))
 
 
 class EndgameHandler(webapp2.RequestHandler):

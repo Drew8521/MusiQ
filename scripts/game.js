@@ -1,4 +1,4 @@
-let countdownEnding = Date.now()+10000;
+let countdownEnding = Date.now()+1000000;
 let startTime = Date.now();
 let score = 0;
 let randomCompliment = Math.floor((Math.random() * 7))
@@ -31,6 +31,7 @@ function exit(event) {
 
 
 const userAnswer = document.getElementById('answer');
+const genre = document.getElementById('genre').innerHTML
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -47,6 +48,15 @@ async function check() {
     fetch(`/update-score?new=${score}`);
     await sleep(1000);
     document.getElementById("question-right").style.opacity = "0";
-
+    updateQuestion();
   }
+}
+
+function updateQuestion() {
+  const url = `/random-question?genre=${encodeURI(genre)}`;
+  let response = fetch(url, {method: "GET"}).then(response => {
+    return response.json()
+  }).then(song => {
+    alert('Yes  you got ' + song.artist);
+  });
 }
