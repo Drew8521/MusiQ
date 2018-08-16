@@ -40,9 +40,9 @@ h5 {
 }
 
 #question {
-  color: blue;
+  color: white;
   font-family: 'Play', sans-serif;
-  text-shadow: 2px 2px white;
+  text-shadow: 2px 2px blue;
   text-align: center;
   font-weight: bold;
   font-size: 50px;

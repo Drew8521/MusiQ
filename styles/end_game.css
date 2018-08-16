@@ -21,8 +21,8 @@ body {
   grid-row: 2;
   font-size: 70px;
   text-shadow: 9px 4px black;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #leader {
@@ -30,7 +30,8 @@ body {
   grid-row: 3;
   font-size: 50px;
   text-shadow: 4px 4px red;
-  margin-bottom: -700px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #table {
