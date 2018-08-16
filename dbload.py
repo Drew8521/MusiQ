@@ -1,4 +1,3 @@
-
 from models import Song
 
 def seed_data():

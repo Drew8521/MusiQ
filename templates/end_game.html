@@ -12,7 +12,12 @@
   <div id='background_image'>
     <h1 class='neon-text'>MusiQ</h1>
     <link async href="https://fonts.googleapis.com/css?family=Atomic%20Age" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
-    <h1 id='good'>Good Game!</h1>
+    <h1 id='good'>Your Score is {{ score }}</h1>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{ musIQ }}" aria-valuemin="0" aria-valuemax="200" style="width:{{musIQPercentage}}%">
+      </div>
+    </div>
+    <h4 id="MusIQ">Your MusIQ is {{ musIQ }} out of 200</h4>
     <!-- <h3>Results</h3> -->
     <h4 id='leader'>Leader Boards</h4>
     <table id='table' style="width:20%" align='center'>

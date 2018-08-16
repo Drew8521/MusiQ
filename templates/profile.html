@@ -17,13 +17,17 @@
     <link async href="https://fonts.googleapis.com/css?family=Atomic%20Age" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
     <h3 id='username'>{{ username }}</h3>
     <div class="progress">
-      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-        40%
+      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{ musIQ }}" aria-valuemin="0" aria-valuemax="200" style="width:{{musIQPercentage}}%">
       </div>
     </div>
+    <h4 id="MusIQ">Your MusIQ is {{ musIQ }} out of 200</h4>
     <h3 id='pic'><img src="media/musiq.png" alt="" height ="100" width='100'> {{QCoins}} </h3>
    <p id='highscores'>HIGHSCORES</p>
+<<<<<<< HEAD
+   <table id='table' style="width:95%">
+=======
    <table id='table' style="width:20%" align='center'>
+>>>>>>> 22668c1d6297d28481868d7182e18e01900b1e4b
      {% for user in highscores %}
      <tr>
       <td>{{user[0]}}</td>
