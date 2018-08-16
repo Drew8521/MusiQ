@@ -51,6 +51,7 @@ class Profile(webapp2.RequestHandler):
         user = users.get_current_user()
         current_user = User.query().filter(User.email == user.email()).get()
         profile_fields = create_profile(current_user)
+        seed_data()
         self.response.write(template.render(profile_fields))
 
     def post(self):
