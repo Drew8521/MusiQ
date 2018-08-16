@@ -27,15 +27,12 @@ body {
 
 }
 
-#genre {
-    color: white;
-    font-family: 'Play', sans-serif;
-    text-shadow: 9px 4px black;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 h2 {
+  color: white;
+  font-family: 'Play', sans-serif;
+  text-shadow: 9px 4px black;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
