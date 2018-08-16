@@ -52,6 +52,7 @@ async function check() {
 }
 
 function updateQuestion() {
+  fetch(`/update-score?new=${score}`);
   const url = `/random-question?genre=${encodeURI(genre)}`;
   let response = fetch(url, {method: "GET"}).then(response => {
     return response.json()
