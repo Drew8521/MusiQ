@@ -86,7 +86,6 @@ class DifficultyChooser(webapp2.RequestHandler):
 class GameHandler(webapp2.RequestHandler):
     def get(self):
         genre = self.request.get("genre")
-        print("HELLO 2")
         random_function = random_song(genre)
         template=jinja_env.get_template('/templates/game.html')
         self.response.write(template.render(random_function))
