@@ -38,7 +38,7 @@ function sleep(ms) {
 }
 
 async function check() {
-  if (userAnswer.value.toLowerCase() === document.getElementById("artist").innerHTML) {
+  if (userAnswer.value === document.getElementById("artist").innerHTML) {
     randomCompliment = Math.floor((Math.random() * 7))
     document.getElementById('question-right').innerHTML = responses[randomCompliment];
     document.getElementById("question-right").style.opacity = "1";
@@ -48,12 +48,7 @@ async function check() {
     fetch(`/update-score?new=${score}`);
     await sleep(1000);
     document.getElementById("question-right").style.opacity = "0";
-<<<<<<< HEAD
     updateQuestion();
-=======
-    fetch(`/game`)
-
->>>>>>> 651880a3c1f982c04719760bcde4310bf74df689
   }
 }
 
@@ -62,6 +57,6 @@ function updateQuestion() {
   let response = fetch(url, {method: "GET"}).then(response => {
     return response.json()
   }).then(song => {
-    alert('Yes  you got ' + song.artist);
+    song.name
   });
 }
