@@ -18,7 +18,7 @@ def ordered_highscores():
 
 def musIQ(score):
     if (score != 0):
-        musIQ = int(math.log(score) * 65)
+        musIQ = int(math.log(score) * 45)
         return musIQ
     return 0
 

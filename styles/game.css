@@ -49,7 +49,10 @@ h5 {
 }
 
 #timer {
-  margin-left: 35%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: opacity .25s ease-in-out;
+  opacity = 0;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
