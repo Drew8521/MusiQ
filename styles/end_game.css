@@ -21,6 +21,8 @@ body {
   grid-row: 2;
   font-size: 70px;
   text-shadow: 9px 4px black;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 #leader {
@@ -55,7 +57,8 @@ body {
 .neon-text {
   grid-column: 1;
   grid-row: 1;
-  margin-bottom: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 0;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
