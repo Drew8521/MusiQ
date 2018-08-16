@@ -11,7 +11,7 @@ from profile_methods import create_profile, ordered_highscores, logout_url, logi
 from dbload import seed_data
 from models import Song
 from random import choice
-from game_service import random_pop_song
+from game_service import random_song
 
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -86,10 +86,15 @@ class DifficultyChooser(webapp2.RequestHandler):
 class GameHandler(webapp2.RequestHandler):
     def get(self):
         genre = self.request.get("genre")
-        random_function = random_pop_song()
+        random_function = random_song(genre)
         template=jinja_env.get_template('/templates/game.html')
-        self.response.write(template.render({"genre": genre}))
         self.response.write(template.render(random_function))
+
+class RandomQuestionHandler(webapp2.RequestHandler):
+    def get(self):
+        genre = self.request.get("genre")
+        random_function = random_song(genre)
+
 
 class EndgameHandler(webapp2.RequestHandler):
     def get(self):
@@ -120,5 +125,6 @@ app = webapp2.WSGIApplication([
     ('/game', GameHandler),
     ('/end-game', EndgameHandler),
     ('/seed', SeedHandler),
-    ('/test', RSHandler)
+    ('/test', RSHandler),
+    ('/random-question', RandomQuestionHandler),
 ], debug=True)

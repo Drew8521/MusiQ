@@ -1,11 +1,12 @@
 from models import Song
 from random import choice
 
-def random_pop_song():
-    songs = choice(Song.query().filter(Song.genre=="Pop").fetch())
-    random_list = {
+def random_song(genre):
+    songs = choice(Song.query().filter(Song.genre==genre).fetch())
+    random_song = {
         "title": songs.song,
         "album": songs.album,
         "artist": songs.artist,
+        "genre": genre,
     }
-    return random_list
+    return random_song

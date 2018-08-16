@@ -84,7 +84,7 @@ h5 {
 
 h1 {
   text-shadow: 2px 4px white;
-  
+
   text-align: center;
 }
 #neon-text {
@@ -119,4 +119,8 @@ h1 {
 p {
   text-align: right;
   padding-right: 500px;
+}
+
+#artist {
+  display: none;
 }
