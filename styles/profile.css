@@ -35,30 +35,28 @@ body {
   font-family: 'Play', sans-serif;
  }
 
- #MusIQ {
-   color: white;
-   grid-column: 2;
-   grid-row: 2;
-   margin-top: 5%;
-  font-family: 'Play', sans-serif;
- }
 
 table td{
-  border: 2px solid blue;
+  border: 2px solid #c9faff;
   font-size: 20px;
-  text-shadow: 1px 1px black;
-  background: rgba(255, 255, 255, 0.6);
+  text-shadow: 1px 1px white;
+  color: black;
+  background: rgba(201, 250, 255, 0.6);
+  padding-right: 160px;
+  text-align: center;
 }
 
 #username {
   grid-column: 1;
   grid-row: 2;
+  border: 2px solid white;
   font-size: 40px;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(113, 255, 207, 0.6);
   color: white;
   font-family: 'Play', sans-serif;
   text-shadow: 4px 4px black;
   margin-left: 20px;
+  border-radius: 20px;
 
 
 
@@ -73,11 +71,13 @@ table td{
    grid-column: 1;
    grid-row: 3;
    font-size: 30px;
-   background: rgba(255, 255, 255, 0.6);
+   background: rgba(201, 250, 255, 0.6);
    color: white;
    font-family: 'Play', sans-serif;
    text-shadow: 4px 4px black;
    margin-left: 20px;
+   border: 2px solid white;
+   border-radius: 20px;
 
  }
 
@@ -103,6 +103,8 @@ table td{
    font-family: 'Play', sans-serif;
    text-shadow: 1px 1px white;
    margin-bottom: 100px;
+   border: 2px solid white;
+   border-radius: 20px;
  }
 
  #play {
@@ -117,12 +119,14 @@ table td{
  #friends {
    grid-column: 3;
    grid-row: 3 / span 6;
-   background: rgba(255, 255, 255, 0.6);
+   background: rgba(79, 99, 255, 0.6);
    color: white;
    font-family: 'Play', sans-serif;
    text-shadow: 4px 4px black;
    margin-right: 20px;
    margin-bottom: 20px;
+   border: 2px solid white;
+   border-radius: 20px;
 }
 
  #sign_out {
@@ -137,6 +141,7 @@ table td{
    margin: -10px 140px -10px 140px;
    text-shadow: 2px 3px blue;
    margin-bottom: 20px;
+   border-radius: 20px;
 
  }
 
