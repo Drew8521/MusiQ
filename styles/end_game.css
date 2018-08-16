@@ -1,7 +1,4 @@
 body {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 2fr 1fr 1fr 3fr 1fr;
   text-align: center;
   color: white;
   width: 100vw;
@@ -11,6 +8,12 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: 'Play', sans-serif;
+}
+
+#background_image {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 2fr 1fr 1fr 3fr 1fr 1fr;
 }
 
 #good {
@@ -25,12 +28,14 @@ body {
   grid-row: 3;
   font-size: 50px;
   text-shadow: 4px 4px red;
+  margin-bottom: -700px;
 }
 
 #table {
   grid-column: 1;
   grid-row: 4;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.6);
+
 }
 
 #play {
@@ -38,10 +43,15 @@ body {
   grid-row: 5;
 }
 
+#return {
+  grid-column: 1;
+  grid-row: 6;
+}
+
 .neon-text {
   grid-column: 1;
   grid-row: 1;
-  margin: 0;
+  margin-bottom: 100px;
   padding: 0;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;

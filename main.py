@@ -109,22 +109,23 @@ class SeedHandler(webapp2.RequestHandler):
         seed_data()
         self.response.write('Data Loaded')
 
-class RSHandler(webapp2.RequestHandler):
+class UpdateScoreHandler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_env.get_template('/templates/test.html')
-        random_function = random_pop_song()
-        self.response.write(template.render(random_function))
-
-#the app configuration section
+        new_score = int(self.request.get("new"))
+        user = users.get_current_user()
+        current_user = User.query().filter(User.email == user.email()).get()
+        if new_score > current_user.highscore:
+            current_user.highscore = new_score
+            current_user.put()
 
 app = webapp2.WSGIApplication([
     ('/', LoginHandler),
     ('/profile', Profile),
     ('/genre-chooser', GenreChooser),
-    ('/difficulty-chooser', DifficultyChooser),#this maps the root url to the MainPage Handler
+    ('/difficulty-chooser', DifficultyChooser),
     ('/game', GameHandler),
     ('/end-game', EndgameHandler),
     ('/seed', SeedHandler),
-    ('/test', RSHandler),
     ('/random-question', RandomQuestionHandler),
+    ('/update-score', UpdateScoreHandler),
 ], debug=True)

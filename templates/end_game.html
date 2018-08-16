@@ -15,7 +15,7 @@
     <h1 id='good'>Good Game!</h1>
     <!-- <h3>Results</h3> -->
     <h4 id='leader'>Leader Boards</h4>
-    <table id='table' style="width:20%">
+    <table id='table' style="width:20%" align='center'>
       {% for user in highscores %}
       <tr>
        <td>{{user[0]}}</td>
@@ -26,7 +26,7 @@
     <form id='play' method="get" action="/genre-chooser">
        <button type="Submit">Play Again!</button>
     </form>
-    <form id='play' method="get" action="/profile">
+    <form id='return' method="get" action="/profile">
        <button type="Submit">Return to your Profile!</button>
     </form>
   </div>
