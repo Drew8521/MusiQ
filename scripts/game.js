@@ -37,7 +37,7 @@ function sleep(ms) {
 
 async function check() {
   if (userAnswer.value.toLowerCase() === document.getElementById("artist").innerHTML) {
-    countdownEnding += 5000;
+    countdownEnding += 3000;
     randomCompliment = Math.floor((Math.random() * 7))
     document.getElementById('question-right').innerHTML = responses[randomCompliment];
     document.getElementById("question-right").style.opacity = "1";
@@ -56,7 +56,7 @@ function updateQuestion() {
   let response = fetch(url, {method: "GET"}).then(response => {
     return response.json()
   }).then(song => {
-    document.getElementById("question").innerHTML = `Who sang ${song.title} <br> on the album ${song.album}?`
+    document.getElementById("question").innerHTML = `Who sang "${song.title}" <br> on the album "${song.album}"?`
     document.getElementById("artist").innerHTML = `${song.artist}`
 
   });
