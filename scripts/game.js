@@ -38,7 +38,7 @@ function sleep(ms) {
 }
 
 async function check() {
-  if (userAnswer.value === document.getElementById("artist").innerHTML) {
+  if (userAnswer.value.toLowerCase() === document.getElementById("artist").innerHTML) {
     randomCompliment = Math.floor((Math.random() * 7))
     document.getElementById('question-right').innerHTML = responses[randomCompliment];
     document.getElementById("question-right").style.opacity = "1";
