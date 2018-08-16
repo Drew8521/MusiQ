@@ -1,4 +1,4 @@
-let countdownEnding = Date.now()+1000000;
+let countdownEnding = Date.now()+60000;
 let startTime = Date.now();
 let score = 0;
 let randomCompliment = Math.floor((Math.random() * 7))
@@ -39,6 +39,7 @@ function sleep(ms) {
 
 async function check() {
   if (userAnswer.value.toLowerCase() === document.getElementById("artist").innerHTML) {
+    countdownEnding += 5000;
     randomCompliment = Math.floor((Math.random() * 7))
     document.getElementById('question-right').innerHTML = responses[randomCompliment];
     document.getElementById("question-right").style.opacity = "1";
@@ -46,9 +47,9 @@ async function check() {
     score += 1;
     console.log(score);
     fetch(`/update-score?new=${score}`);
+    updateQuestion();
     await sleep(1000);
     document.getElementById("question-right").style.opacity = "0";
-    updateQuestion();
   }
 }
 
@@ -57,6 +58,8 @@ function updateQuestion() {
   let response = fetch(url, {method: "GET"}).then(response => {
     return response.json()
   }).then(song => {
-    song.name
+    document.getElementById("question").innerHTML = `Who sang ${song.title} <br> on the album ${song.album}?`
+    document.getElementById("artist").innerHTML = `${song.artist}`
+
   });
 }
