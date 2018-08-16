@@ -37,14 +37,9 @@ function sleep(ms) {
 }
 
 async function check() {
-<<<<<<< HEAD
   if (userAnswer.value.toLowerCase() === document.getElementById("artist").innerHTML) {
-    document.getElementById('question-right').innerHTML = "Wow You Have Done It!";
-=======
-  if (userAnswer.value === document.getElementById("artist").innerHTML) {
     randomCompliment = Math.floor((Math.random() * 7))
     document.getElementById('question-right').innerHTML = responses[randomCompliment];
->>>>>>> 6fcbac2437639617b19c6c1250d1229f61252e6e
     document.getElementById("question-right").style.opacity = "1";
     userAnswer.value = "";
     score += 1;
@@ -52,10 +47,7 @@ async function check() {
     fetch(`/update-score?new=${score}`);
     await sleep(1000);
     document.getElementById("question-right").style.opacity = "0";
-<<<<<<< HEAD
     fetch(`/game`)
-=======
->>>>>>> 6fcbac2437639617b19c6c1250d1229f61252e6e
 
   }
 }
