@@ -19,7 +19,10 @@ def ordered_highscores():
 def musIQ(score):
     if (score != 0):
         musIQ = int(math.log(score) * 45)
-        return musIQ
+        if musIQ >= 200:
+            return 200
+        else:
+            return musIQ
     return 0
 
 def musIQPercentage(musIQ):
