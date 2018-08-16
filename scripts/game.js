@@ -2,7 +2,7 @@ let countdownEnding = Date.now()+60000;
 let startTime = Date.now();
 let score = 0;
 let randomCompliment = Math.floor((Math.random() * 7))
-let responses = ["Music is your forte!", "A high note!", "Blast it!", "Killed it!", "Sick!", "MusIQ off the Charts!", "Impressive!"];
+let responses = ["Music is your forte!", "A high note!", "Blast it!", "Killed it!", "Sick!", "MusIQ off the Charts!", "Impressive!", "Rock On!"];
 
 const menu = document.getElementById('button');
 menu.addEventListener('click', exit);
