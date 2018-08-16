@@ -3,8 +3,10 @@ let startTime = Date.now();
 let score = 0;
 let randomCompliment = Math.floor((Math.random() * 7))
 let responses = ["Music is your forte!", "A high note!", "Blast it!", "Killed it!", "Sick!", "MusIQ off the Charts!", "Impressive!", "Rock On!"];
+const genre = document.getElementById('genre').innerHTML
 
-const menu = document.getElementById('button');
+updateQuestion();
+const menu = document.getElementById('button-right');
 menu.addEventListener('click', exit);
 function exit(event) {
   location.href='/profile';
@@ -31,7 +33,6 @@ function exit(event) {
 
 
 const userAnswer = document.getElementById('answer');
-const genre = document.getElementById('genre').innerHTML
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
