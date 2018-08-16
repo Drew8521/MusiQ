@@ -52,6 +52,18 @@ body {
   margin-bottom: 10px;
 }
 
+
+.progress, .progress-bar {
+  grid-column: 2;
+  grid-row: 2;
+  height: 10px;
+
+  width: 450px;
+  margin-bottom: 0;
+  border: 0;
+  padding: 0;
+}
+
 .neon-text {
   grid-column: 1;
   grid-row: 1;

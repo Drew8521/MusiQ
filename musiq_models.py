@@ -6,4 +6,5 @@ class User(ndb.Model):
     user_nickname =  ndb.StringProperty(required=True)
     highscore =  ndb.IntegerProperty(default = 0)
     QCoins = ndb.IntegerProperty(default = 50)
+    score = ndb.IntegerProperty(default = 0)
     friends = ndb.KeyProperty(kind='User', repeated=True, required=False)

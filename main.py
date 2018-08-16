@@ -114,6 +114,8 @@ class UpdateScoreHandler(webapp2.RequestHandler):
         new_score = int(self.request.get("new"))
         user = users.get_current_user()
         current_user = User.query().filter(User.email == user.email()).get()
+        current_user.score = new_score
+        current_user.put()
         if new_score > current_user.highscore:
             current_user.highscore = new_score
             current_user.put()
