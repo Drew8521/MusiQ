@@ -40,10 +40,12 @@ h5 {
 }
 
 #question {
-  color: red;
+  color: white;
   font-family: 'Play', sans-serif;
-  text-shadow: 2px 2px black;
+  text-shadow: 2px 2px blue;
   text-align: center;
+  font-weight: bold;
+  font-size: 50px;
 }
 
 #timer {
