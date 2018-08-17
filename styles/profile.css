@@ -16,7 +16,19 @@ body {
 
 }
 
-.progress, .progress-bar {
+.progress {
+  grid-column: 2;
+  grid-row: 2;
+  height: 10px;
+  width: 450px;
+  margin-bottom: 0;
+  border: 0;
+  padding: 0;
+  box-shadow: 2px;
+  margin-left: 91px;
+}
+
+.progress-bar {
   grid-column: 2;
   grid-row: 2;
   height: 10px;
@@ -26,6 +38,7 @@ body {
   padding: 0;
   box-shadow: 2px;
 }
+
 
 #MusIQ {
    color: white;
