@@ -36,7 +36,7 @@ function sleep(ms) {
 }
 
 async function check() {
-  if (userAnswer.value.toLowerCase() === document.getElementById("artist").innerHTML) {
+  if (normalized(userAnswer.value) === normalized(document.getElementById("artist").innerHTML)) {
     countdownEnding += 5000;
     randomCompliment = Math.floor((Math.random() * 7))
     document.getElementById('question-right').innerHTML = responses[randomCompliment];
@@ -60,4 +60,8 @@ function updateQuestion() {
     document.getElementById("artist").innerHTML = `${song.artist}`
 
   });
+}
+
+function normalized(s) {
+    return s.toLowerCase().replace(/the /g, '').replace(/[^a-z0-9]/g, "")
 }
